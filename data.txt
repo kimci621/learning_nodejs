@@ -1,4 +1,0 @@
-hello its common node js!
-lorem
-ipsum
-dolores
