@@ -1,3 +1,28 @@
 {
-    "type": "module"
+  "type": "module",
+  "name": "learnin-nodejs",
+  "version": "1.0.0",
+  "description": "app where i learn nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimci621/learning_nodejs.git"
+  },
+  "keywords": [
+    "learn",
+    "nodejs"
+  ],
+  "author": "Amir Latipov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimci621/learning_nodejs/issues"
+  },
+  "homepage": "https://github.com/kimci621/learning_nodejs#readme",
+  "dependencies": {
+    "axios": "^1.1.3"
+  }
 }

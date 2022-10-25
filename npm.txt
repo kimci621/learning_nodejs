@@ -1,0 +1,68 @@
+npm init - создание приложения 
+{
+  "type": "module", - использование ESModules в js
+  "name": "learnin-nodejs", - название проекта
+  "version": "1.0.0", - 1=мажорная версия. 0=апдейты и фичи. 0=баг фиксы
+  "description": "app where i learn nodejs", - описание проекта
+  "main": "index.js", - главный скрипт файл 
+  "os": ["linux", "windows", "macos"], - доступные опщерационные системы
+  "man": "./readme.md", - путь к мануалу
+  "fund": "https://someurl.com", - url если кто-то захочет спонсировать
+  "scripts": { - тут будут все скрипты, которые будут запускаться с npm ()
+    "start": "node index.js",
+    "test": "test" 
+  },
+  "repository": { - связанный репозиторий
+    "type": "git",
+    "url": "git+https://github.com/kimci621/learning_nodejs.git"
+  },
+  "keywords": [ - ключевые слова для приложения
+    "learn",
+    "nodejs"
+  ],
+  "dependencies": { - для запуска приложения (основные зависимоти)
+    "axios": "^1.1.3"
+  },
+  "devDependencies": { - для запуска приложения в dev окружении
+    "axios": "^1.1.3"
+  },
+  "peerDependencies": { - эффективно указывает зависимости
+    "axios": "^1.1.3"
+  },
+  "peerDependenciesMeta": { - мета информация для peerDependencies
+    "axios": "^1.1.3"
+  },
+  "optionalDependencies": { - опциональные зависимоти, приложение может работать без них
+    "axios": "^1.1.3"
+  },
+  "author": "Amir Latipov", - автор
+  "license": "ISC", - лиценция приложения
+  "homepage": "https://github.com/kimci621/learning_nodejs#readme" - домашняя страница приложения
+  "bugs": {
+    "url": "https://github.com/kimci621/learning_nodejs/issues", - куда обращаться если обнаружили баги
+    "email": "kimciwork@gmail.com"
+  },
+}
+
+
+файл .npmignore как гитигнор будет игнорировать указанные в нем директории при публикации приложения в npm
+
+npm dedup - приводит все дублирующие на машине зависимости в единную версию
+npm audit - проверка пакетов на безопасность и уязвимости  (npm audit fix --force)
+npm ci - сносит nodemodules и устанавливает на чистую все зависимости
+npm fund - ищет все зависимости для зависимотей
+npm cache verify - проверка кэша на проблемы (npm cache clean - очистка кэша)
+
+npm i -D gulp - установка зависимоти как devDependencies
+npm uninstall(можно писать un) gulp - удаление зависимоти (можно удалить зависимоть из package.json и запустить npm i/ci)
+npm uni -D guld - удалить только из devDependencies
+
+npm i -g gulp - установить зависимоть глобально(на всей системе)
+
+npm i gulp --save - --save установка зависимоти для проекта 
+npm i gulp --save-dev - --save-dev установка зависимоти для проекта только для разработки
+
+npm ls - показать все зависимости
+npm outdated - показывает доступно ли обновления для зависсимостей 
+npm update(или up) eslint -  для установки последней версии
+npm up - обновить все зависимоти
