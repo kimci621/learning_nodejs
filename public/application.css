@@ -1,0 +1,11 @@
+.nav-wrapper {
+  padding: 10px;
+  padding-top: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  min-height: 100vh;
+}

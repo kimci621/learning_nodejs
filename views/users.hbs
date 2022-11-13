@@ -1,0 +1,20 @@
+<h1>Пользователи</h1>
+{{#if users.length}}
+  {{#each users}}
+    <div class="col s12 m7">
+      <h5 class="header">Заголовок</h2>
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>hello i am {{name}} user!</p>
+          </div>
+          <div class="card-action">
+            <a href="#">This is a link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+{{else}}
+  <h5>Нет пользователей</h5>
+{{/if}}

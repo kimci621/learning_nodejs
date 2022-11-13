@@ -1,0 +1,27 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      {{#if isHome}}
+        <li class="active"><a href="/">Главная</a></li>
+      {{else}}
+        <li><a href="/">Главная</a></li>
+      {{/if}}
+      {{#if isUsers}}
+        <li class="active"><a href="/users">Пользователи</a></li>
+      {{else}}
+        <li><a href="/users">Пользователи</a></li>
+      {{/if}}
+      {{#if isLogin}}
+        <li class="active"><a href="/login">Логин</a></li>
+      {{else}}
+        <li><a href="/login">Логин</a></li>
+      {{/if}}
+      {{#if isAbout}}
+        <li class="active"><a href="/about">О нас</a></li>
+      {{else}}
+        <li><a href="/about">О нас</a></li>
+      {{/if}}
+    </ul>
+  </div>
+</nav>
