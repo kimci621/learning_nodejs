@@ -2,12 +2,25 @@ import { Router } from "express";
 export const usersRouter = Router();
 import { User } from "../models/user.model.js";
 
-usersRouter.get("/", async (req, res) => {
+const getUsers = async () => {
   const usersData = await new User().getAll();
-  const parsed = usersData.map((i) => JSON.parse(i));
+  return usersData.map((i) => JSON.parse(i));
+};
+
+usersRouter.get("/", async (req, res) => {
+  const data = await getUsers();
   res.render("users", {
     title: "Пользователи",
     isUsers: true,
-    users: parsed,
+    users: data,
+  });
+});
+
+usersRouter.get("/:name", async (req, res) => {
+  const data = await getUsers();
+  const user = data.find((user) => user.name == req.params.name);
+  res.render("user", {
+    layout: "userShow",
+    user: user,
   });
 });

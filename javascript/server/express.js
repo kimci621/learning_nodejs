@@ -1,9 +1,9 @@
 import express from "express";
 import exphbs from "express-handlebars";
-import { mainRouter } from "../routes/main.route.js";
-import { aboutRouter } from "../routes/about.route.js";
-import { loginRouter } from "../routes/login.route.js";
-import { usersRouter } from "../routes/users.route.js";
+import { mainRouter } from "../../routes/main.route.js";
+import { aboutRouter } from "../../routes/about.route.js";
+import { loginRouter } from "../../routes/login.route.js";
+import { usersRouter } from "../../routes/users.route.js";
 
 
 export const initExpress = () => {

@@ -3,12 +3,10 @@
   "name": "learnin-nodejs",
   "version": "1.0.0",
   "description": "app where i learn nodejs",
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon start.js",
-    "test": "test",
-    "show": "node showdir.js"
+    "start": "node ./javascript/start.js",
+    "dev": "nodemon ./javascript/start.js",
+    "test": "test"
   },
   "repository": {
     "type": "git",

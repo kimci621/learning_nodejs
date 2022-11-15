@@ -9,3 +9,11 @@ body {
 main {
   min-height: 100vh;
 }
+.user {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0 auto;
+}
