@@ -2,14 +2,15 @@
 {{#if users.length}}
   {{#each users}}
     <div class="col s12 m7">
-      <h5 class="header">Заголовок</h2>
+      <h5 class="header">Пользователь</h2>
       <div class="card horizontal">
         <div class="card-stacked">
           <div class="card-content">
-            <p>hello i am {{name}} user!</p>
+            <p>Привет! Я {{name}}</p>
           </div>
           <div class="card-action">
-            <a href="/users/{{name}}">This is a link</a>
+            <a href="/users/{{name}}">Посмотреть профиль</a>
+            <a href="/users/{{name}}/edit?allow=true">Изменить</a>
           </div>
         </div>
       </div>

@@ -1,0 +1,11 @@
+<body>
+  <div class="user">
+    <h3>Изменить пользователя:</h3>
+    <form action="/users/edit" method="post">
+      <input type="text" name="name" value="{{user.name}}" />
+      <input type="text" name="password" value="{{user.password}}" />
+      <input type="hidden" name="id" value="{{user.id}}" />
+      <button type="submit">edit</button>
+    </form>
+  </div>
+</body>
