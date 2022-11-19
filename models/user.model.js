@@ -6,7 +6,7 @@ export class User {
   name;
   password;
   id;
-  current = path.dirname(import.meta.url.split("///")[1]);
+  currentFilePath = path.dirname(import.meta.url.split("///")[1]);
   constructor(name, password) {
     this.name = name;
     this.password = password;
@@ -22,10 +22,10 @@ export class User {
   }
 
   async save() {
-    const users = await this.getAll();
+    const users = await this.getAll("users.json");
     users.push(this.toJSON());
     fs.writeFile(
-      path.join(this.current, "..", "database", "users.json"),
+      path.join(this.currentFilePath, "..", "database", "users.json"),
       JSON.stringify(users),
       (err) => {
         if (err) throw err;
@@ -33,10 +33,10 @@ export class User {
     );
   }
 
-  getAll() {
+  getAll(filename) {
     return new Promise((res, rej) => {
       fs.readFile(
-        path.join(this.current, "..", "database", "users.json"),
+        path.join(this.currentFilePath, "..", "database", filename),
         "utf-8",
         (err, content) => {
           if (err) {
@@ -47,5 +47,17 @@ export class User {
         }
       );
     });
+  }
+
+  async addToFriends(user) {
+    const users = await this.getAll("friends.json");
+    users.push(JSON.stringify(user));
+    fs.writeFile(
+      path.join(this.currentFilePath, "..", "database", "friends.json"),
+      JSON.stringify(users),
+      (err) => {
+        if (err) throw err;
+      }
+    );
   }
 }

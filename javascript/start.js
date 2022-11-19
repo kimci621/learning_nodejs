@@ -1,3 +1,3 @@
-import { initExpress } from "./server/express.js";
+import { initExpress } from "./express.js";
 
 initExpress();

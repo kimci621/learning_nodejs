@@ -4,33 +4,32 @@ import { User } from "../models/user.model.js";
 import fs from "fs";
 import path from "path";
 
-const getUsers = async () => {
-  const usersData = await new User().getAll();
+const getUsers = async (filename) => {
+  const usersData = await new User().getAll(filename);
   return usersData.map((i) => JSON.parse(i));
 };
 
+//GET
 usersRouter.get("/", async (req, res) => {
-  const data = await getUsers();
+  const data = await getUsers("users.json");
   res.render("users", {
     title: "Пользователи",
     isUsers: true,
     users: data,
   });
 });
-
 usersRouter.get("/:name", async (req, res) => {
-  const data = await getUsers();
+  const data = await getUsers("users.json");
   const user = data.find((user) => user.name == req.params.name);
   res.render("user", {
     layout: "userShow",
     user: user,
   });
 });
-
 usersRouter.get("/:name/edit", async (req, res) => {
   if (req.query.allow) {
     //req.query хранит параметры url
-    const data = await getUsers();
+    const data = await getUsers("users.json");
     const user = data.find((user) => user.name == req.params.name);
     res.render("edit", {
       layout: "userEdit",
@@ -40,7 +39,16 @@ usersRouter.get("/:name/edit", async (req, res) => {
     res.redirect("/users");
   }
 });
+usersRouter.get("/:name", async (req, res) => {
+  const data = await getUsers("users.json");
+  const user = data.find((user) => user.name == req.params.name);
+  res.render("user", {
+    layout: "userShow",
+    user: user,
+  });
+});
 
+//POST
 usersRouter.post("/edit", async (req, res) => {
   let users = await getUsers();
   const user = users.find((user) => user.id == req.body.id);

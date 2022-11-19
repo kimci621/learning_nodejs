@@ -1,6 +1,16 @@
+{{> head}}
+{{> nav}}
 <body>
-  <div class="user">
+  <div class="user main">
     <h3>Пользователь:</h3>
     <div class="name">{{user.name}}</div>
+
+    <form action="/friends/add" method="post">
+      <input type="hidden" value="{{user.id}}" name="id" />
+      <button type="submit"> добавить в друзья</button>
+    </form>
+
   </div>
+  {{> footer}}
 </body>
+</html>

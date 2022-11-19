@@ -12,6 +12,11 @@
       {{else}}
         <li><a href="/users">Пользователи</a></li>
       {{/if}}
+      {{#if isFriends}}
+        <li class="active"><a href="/friends">Друзья</a></li>
+      {{else}}
+        <li><a href="/friends">Друзья</a></li>
+      {{/if}}
       {{#if isLogin}}
         <li class="active"><a href="/login">Логин</a></li>
       {{else}}
